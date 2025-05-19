@@ -1,0 +1,17 @@
+1. Primary keys
+Okay, now it's time to look at an actual use case for superkeys, keys, and candidate keys.
+
+2. Primary keys
+Primary keys are one of the most important concepts in database design. Almost every database table should have a primary key – chosen by you from the set of candidate keys. The main purpose, as already explained, is uniquely identifying records in a table. This makes it easier to reference these records from other tables, for instance – a concept you will go through in the next and last chapter. You might have already guessed it, but primary keys need to be defined on columns that don't accept duplicate or null values. Lastly, primary key constraints are time-invariant, meaning that they must hold for the current data in the table – but also for any future data that the table might hold. It is therefore wise to choose columns where values will always be unique and not null.
+
+3. Specifying primary keys
+So these two tables accept exactly the same data, however, the latter has an explicit primary key specified. As you can see, specifying primary keys upon table creation is very easy. Primary keys can also be specified like so: This notation is necessary if you want to designate more than one column as the primary key. Beware, that's still only one primary key, it is just formed by the combination of two columns. Ideally, though, primary keys consist of as few columns as possible!
+
+4. Specifying primary keys (contd.)
+Adding primary key constraints to existing tables is the same procedure as adding unique constraints, which you might remember from the last chapter. As with unique constraints, you have to give the constraint a certain name.
+
+5. Your database
+In the exercises that follow, you will add primary keys to the tables "universities" and "organizations". You will add a special type of primary key, a so-called surrogate key, to the table "professors" in the last part of this chapter.
+
+6. Let's practice!
+Let's go add these keys.

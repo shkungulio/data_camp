@@ -1,0 +1,29 @@
+1. Tables: At the core of every database
+Now that you've had a first look at your database, let's delve into one of the most important concepts behind databases: tables.
+
+2. Redundancy in the university_professors table
+You might have noticed that there's some redundancy in the "university_professors" table. Let's have a look at the first three records, for example.
+
+3. Redundancy in the university_professors table
+As you can see, this professor is repeated in the first three records. Also, his university, the "ETH Lausanne", is repeated a couple of times – because he only works for this university. However, he seems to have affiliations with at least three different organizations. So, there's a certain redundancy in that table. The reason for this is that the table actually contains entities of at least three different types. Let's have a look at these entity types.
+
+4. Redundancy in the university_professors table
+Actually the table stores professors, highlighted in blue, universities, highlighted in green, and organizations, highlighted in brown. There's also this column called "function" which denotes the role the professor plays at a certain organization. More on that later.
+
+5. Currently: One "entity type" in the database
+Let's look at the current database once again. The graphic used here is called an entity-relationship diagram. Squares denote so-called entity types, while circles connected to these denote attributes (or columns). So far, we have only modeled one so-called entity type – "university_professors". However, we discovered that this table actually holds many different entity types...
+
+6. A better database model with three entity types
+...so this updated entity-relationship model on the right side would be better suited. It represents three entity types, "professors", "universities", and "organizations" in their own tables, with respective attributes. This reduces redundancy, as professors, unlike now, need to be stored only once. Note that, for each professor, the respective university is also denoted through the "university_shortname" attribute. However, one original attribute, the "function", is still missing.
+
+7. A better database model with four entity types
+As you know, this database contains affiliations of professors with third-party organizations. The attribute "function" gives some extra information to that affiliation. For instance, somebody might act as chairman for a certain third-party organization. So the best idea at the moment is to store these affiliations in their own table – it connects professors with their respective organizations, where they have a certain function.
+
+8. Create new tables with CREATE TABLE
+The first thing you need to do now is to create four empty tables for professors, universities, organizations, and affiliations. This is quite easy with SQL – you'll use the "CREATE TABLE" command for that. At the minimum, this command requires a table name and one or more columns with their respective data types.
+
+9. Create new tables with CREATE TABLE
+For example, you could create a "weather" table with three aptly named columns. After each column name, you must specify the data type. There are many different types, and you will discover some in the remainder of this course. For example, you could specify a text column, a numeric column, and a column that requires fixed-length character strings with 5 characters each. These data types will be explained in more detail in the next chapter.
+
+10. Let's practice!
+For now, you will first create the four tables and then migrate data from the original table to them. Let's do this.
